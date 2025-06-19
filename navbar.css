@@ -1,0 +1,83 @@
+.mask1 {
+  -webkit-mask-image: linear-gradient(black, transparent);
+  mask-image: linear-gradient(black, transparent);
+}
+
+nav {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: rgba(255 255 255 / 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255 255 255 / 0.2);
+  z-index: 10;
+  border-radius: 20px;
+}
+
+nav h1 {
+  flex-grow: 1;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.icon-btn {
+  background: rgba(255 255 255 / 0.1);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.icon-btn:hover {
+  background: rgba(255 255 255 / 0.2);
+}
+
+.icon-btn svg {
+  pointer-events: none;
+}
+
+.icon-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255 255 255 / 0) 0%,
+    rgba(255 255 255 / 0.3) 50%,
+    rgba(255 255 255 / 0) 100%
+  );
+  transform: rotate(25deg);
+  filter: blur(8px);
+  opacity: 0.6;
+  animation: shine-move 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shine-move {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
